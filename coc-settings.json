@@ -1,0 +1,38 @@
+{
+	// Format on save:
+	"coc.preferences.formatOnSaveFiletypes": [
+		"elm", // Elm
+		"rs", // Rust
+	],
+	// Disable snippets
+	"coc.preferences.snippets.enable": false,
+	// Show function signatures
+	"signature.enable": true,
+	// Diagnostics
+	"diagnostic.enable": true,
+	"diagnostic.virtualText": true,
+	"diagnostic.enableHighlightLineNumber": true,
+	"diagnostic.enableSign": true,
+	"diagnostic.checkCurrentLine": true,
+	"diagnostic.messageTarget": "float",
+	"diagnostic.level": "hint",
+	// Suggestions
+	"suggest.autoTrigger": "always",
+	// Codelens (e.g., run / debug widgets)
+	"codeLens.enable": true,
+	// Zig
+	"zig.enabled": false,
+	"zig.path": "zls",
+	"zig.debugLog": false,
+	// Rust
+	"rust-analyzer.enable": true,
+	"rust-analyzer.lens.enable": true,
+	"rust-analyzer.diagnostics.enable": true,
+	"rust-analyzer.diagnostics.experimental.enable": false,
+	"rust-analyzer.inlayHints.enable": true,
+	"rust-analyzer.inlayHints.parameterHints.enable": true,
+	"rust-analyzer.inlayHints.typeHints.enable": true,
+	"rust-analyzer.inlayHints.chainingHints.enable": true,
+	"rust-analyzer.inlayHints.closingBraceHints.enable": true,
+	"rust-analyzer.inlayHints.closingBraceHints.minLines": 1,
+}
