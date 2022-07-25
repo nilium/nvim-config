@@ -1,11 +1,3 @@
--- lvim.leader does not immediately set <Leader> (a little surprised it's not
--- a metatable or something), so set it here as well.
-
--- NOTE: lvim.keys.* does not use metatables, assignments do not immediately
--- take effect, so what <Leader> means to this is whatever the *last* value of
--- lvim.leader is. To use <Leader> immediately, set vim.o.leader and use
--- nvim_set_keymap.
-
 local function leader(str)
   vim.g.mapleader = str
   vim.g.maplocalleader = str
@@ -86,17 +78,6 @@ nnoremap('<Leader>b', '<Cmd>FzfBuffers<CR>')
 nnoremap('<Leader>r', '<Cmd>FzfRg<CR>')
 nnoremap('<Leader>c', '<Cmd>FzfCommands<CR>')
 
--- Disable A-up/down for moving lines up/down, A-left/right, A-[jk], and jk.
--- for i, dir in ipairs({ "<A-Up>", "<A-Down>", "<A-Left>", "<A-Right>", "<A-j>", "<A-k>", "jk", "jj", "kj", "$", "^" }) do
--- lvim.keys.insert_mode[dir] = false
--- lvim.keys.normal_mode[dir] = false
--- lvim.keys.visual_mode[dir] = false
--- end
-
--- Disable LunarVim's sticky visual shift. They call it better, I disagree.
--- lvim.keys.visual_mode['>'] = false
--- lvim.keys.visual_mode['<'] = false
-
 -- undotree -- feels like there should be a way to set this in a config function
 -- but it didn't work and I'm not trying that hard.
 nnoremap('<Leader>u', '<Cmd>UndotreeToggle<CR>')
@@ -104,35 +85,16 @@ nnoremap('<Leader>u', '<Cmd>UndotreeToggle<CR>')
 -- A handful of special bindings for jumping up/down visually in wrapped text.
 -- Pretty much makes j/k move up and down visually. This might work better if it
 -- checked if wrap was set, but is it necessary? Nah.
--- local function jumpy(dir)
---   return function()
---     if vim.v.count > 3 then
---       vim.cmd("norm! m'" .. vim.v.count .. dir)
---     else
---       vim.cmd("norm! " .. vim.v.count .. 'g' .. dir)
---     end
---   end
--- end
-
 vim.cmd [[vnoremap <silent> <expr> j (v:count > 3 ? "m'" .. v:count . 'j' : 'gj')]]
 vim.cmd [[vnoremap <silent> <expr> k (v:count > 3 ? "m'" .. v:count . 'k' : 'gk')]]
 vim.cmd [[nnoremap <silent> <expr> j (v:count > 3 ? "m'" .. v:count . 'j' : 'gj')]]
 vim.cmd [[nnoremap <silent> <expr> k (v:count > 3 ? "m'" .. v:count . 'k' : 'gk')]]
 
+-- Similar, but for insert mode:
 vim.cmd [[inoremap <silent> <C-h> <C-o>h]]
 vim.cmd [[inoremap <silent> <C-j> <C-o>j]]
 vim.cmd [[inoremap <silent> <C-k> <C-o>k]]
 vim.cmd [[inoremap <silent> <C-l> <C-o>l]]
-
--- vnoremap('j', jumpy('j'))
--- vnoremap('k', jumpy('k'))
--- nnoremap('j', jumpy('j'))
--- nnoremap('k', jumpy('k'))
-
--- inoremap('C-j', jumpy('j'))
--- inoremap('C-k', jumpy('k'))
--- inoremap('C-h', function() vim.cmd({ cmd = 'norm!', args = { vim.v.count .. 'h' } }) end)
--- inoremap('C-l', function() vim.cmd({ cmd = 'norm!', args = { vim.v.count .. 'l' } }) end)
 
 -- Yanky
 nmap("p", "<Plug>(YankyPutAfter)")
