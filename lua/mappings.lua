@@ -22,7 +22,7 @@ end
 local function noremapfn(mode)
   return function(key, expr, options)
     options = vim.tbl_extend('force', { noremap = true, silent = true }, options or {})
-    return map('n', key, expr, options)
+    return map(mode, key, expr, options)
   end
 end
 
