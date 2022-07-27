@@ -56,9 +56,8 @@ nnoremap('<Leader>sr', '<Cmd>set relativenumber!<CR>')
 -- Buffers
 nnoremap('<Leader>bn', '<Cmd>bnext<CR>')
 nnoremap('<Leader>bp', '<Cmd>bprev<CR>')
-nnoremap('<Leader>q', '<Cmd>Bdelete<CR>')
--- Switch to buffer given by count.
--- vim.cmd("nnoremap <silent> <expr> ,b (v:count > 0 ? ':b'.v:count : ':ls').'<CR>'")
+nnoremap('<Leader>q', '<Cmd>BufferClose<CR>')
+nnoremap('<Leader>b', '<Cmd>BufferPick<CR>')
 
 -- Emacs keys
 nnoremap('<C-a>', '^')
@@ -74,7 +73,7 @@ onoremap('<C-e>', '$')
 
 -- Fzf
 nnoremap('<Leader>t', '<Cmd>FzfFiles<CR>')
-nnoremap('<Leader>b', '<Cmd>FzfBuffers<CR>')
+-- nnoremap('<Leader>b', '<Cmd>FzfBuffers<CR>')
 nnoremap('<Leader>r', '<Cmd>FzfRg<CR>')
 nnoremap('<Leader>c', '<Cmd>FzfCommands<CR>')
 
