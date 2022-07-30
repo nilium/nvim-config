@@ -79,7 +79,4 @@
 ; Stamp
 (nnoremap :S "<Cmd>lua require(\"stamp\").stamp(vim.v.register)<CR>")
 
-; Peepsight
-(nnoremap :<Leader>f "<Cmd>Peepsight<CR>")
-
 {}

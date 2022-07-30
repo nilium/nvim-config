@@ -21,11 +21,6 @@
   (plugin :p00f/nvim-ts-rainbow
           :requires [:nvim-treesitter/nvim-treesitter])
 
-  ; Plugin to highlight only the current function.
-  (plugin :koenverburg/peepsight.nvim
-          :requires [:nvim-treesitter/nvim-treesitter]
-          :config #(Plugin.config :peepsight))
-
   ; Color scheme debugging.
   (plugin :nvim-treesitter/playground
           :requires [:nvim-treesitter/nvim-treesitter]
