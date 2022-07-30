@@ -49,8 +49,8 @@
  (plugin :junegunn/fzf)
 
  (plugin :junegunn/fzf.vim
-         :setup #(fn [] (set vim.g.fzf_command_prefix :Fzf)
-                        (set vim.env.FZF_DEFAULT_COMMAND "fd -tf")))
+         :setup (fn [] (set vim.g.fzf_command_prefix :Fzf)
+                       (set vim.env.FZF_DEFAULT_COMMAND "fd -tf")))
 
  ; Parinfer, for editing Lisp without going mad. Or maybe slight madness.
  (plugin :eraserhd/parinfer-rust
