@@ -50,6 +50,9 @@
 ; but it didn"t work and I"m not trying that hard.
 (nnoremap :<Leader>u "<Cmd>UndotreeToggle<CR>")
 
+; Redo via U (shift-u)
+(nnoremap :U :<C-r>)
+
 ; A handful of special bindings for jumping up/down visually in wrapped text.
 ; Pretty much makes j/k move up and down visually. This might work better if it
 ; checked if wrap was set, but is it necessary? Nah.
