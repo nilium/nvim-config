@@ -12,5 +12,3 @@ table.insert(package.loaders, fennel.makeSearcher({ allowedGlobals = false }))
 debug.traceback = fennel.traceback
 -- Load init.
 require "core"
-
--- test
