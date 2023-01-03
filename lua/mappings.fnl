@@ -61,12 +61,6 @@
 (vnoremap :j "(v:count > 3 ? \"m'\" .. v:count . 'j' : 'gj')" {:expr true})
 (vnoremap :k "(v:count > 3 ? \"m'\" .. v:count . 'k' : 'gk')" {:expr true})
 
-; Similar, but for insert mode:
-(inoremap :<C-h> :<C-o>h)
-(inoremap :<C-j> :<C-o>j)
-(inoremap :<C-k> :<C-o>k)
-(inoremap :<C-l> :<C-o>l)
-
 ; Yanky
 (nmap :p "<Plug>(YankyPutAfter)")
 (nmap :P "<Plug>(YankyPutBefore)")
@@ -78,6 +72,31 @@
 (xmap :gP "<Plug>(YankyGPutBefore)")
 (nmap :<c-p> "<Plug>(YankyCycleForward)")
 (nmap :<c-n> "<Plug>(YankyCycleBackward)")
+
+; COC
+(let [config-dir (vim.fn.stdpath :config)
+      fns-file (vim.fn.fnameescape (.. config-dir "/fns.vim"))]
+     (vim.api.nvim_exec (.. "source " fns-file) false))
+
+(inoremap :<Tab>
+          "coc#pum#visible() ? coc#pum#next(1) : CheckBackspace() ? \"\\<Tab>\" : coc#refresh()"
+          {:expr true})
+
+(inoremap :<S-Tab>
+          "coc#pum#visible() ? coc#pum#prev(1) : \"\\<C-h>\""
+          {:expr true})
+
+(inoremap :<CR>
+          "coc#pum#visible() ? coc#pum#confirm() : \"\\<C-g>u\\<CR>\\<c-r>=coc#on_enter()\\<CR>\""
+          {:expr true})
+
+(inoremap :<C-Space> "exists('coc#refresh') ? coc#refresh() : ''" {:expr true})
+
+(nmap "[g" "<Plug>(coc-diagnostic-prev)" {:silent true})
+(nmap "]g" "<Plug>(coc-diagnostic-next)" {:silent true})
+
+(nmap :<C-k> "<Plug>(coc-codeaction-cursor)")
+(vmap :<C-k> "<Plug>(coc-codeaction-selection)")
 
 ; Stamp
 (nnoremap :S "<Cmd>lua require(\"stamp\").stamp(vim.v.register)<CR>")

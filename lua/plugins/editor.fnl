@@ -24,10 +24,6 @@
                              {:event :InsertLeave} (put 1)
                              (where {:event :WinEnter} (#(or $1.diff $1.previewwindow) vim.o)) (put 0))}))))
 
- ; Pairs of brackets / parentheses.
- (plugin :windwp/nvim-autopairs
-         :config #(Plugin.config :nvim-autopairs))
-
  ; Comment stuff, similar to vim-commentary.
  (plugin :numToStr/Comment.nvim
          :config #(Plugin.config :Comment))

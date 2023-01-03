@@ -37,6 +37,7 @@
   :wildmenu true
   :showcmd true
   :showmode true
+  :signcolumn :yes
   :wildignore "*/node_modules/*,*.so,*.swp,*/.git/*,*.zip,*.dmg,*/*.sparsebundle/*")
 
 ; Split in the correct directions

@@ -2,7 +2,7 @@
 	// Format on save:
 	"coc.preferences.formatOnSaveFiletypes": [
 		"elm", // Elm
-		"rs", // Rust
+		"rust", // Rust
 	],
 	// Disable snippets
 	"coc.preferences.snippets.enable": false,
@@ -30,7 +30,7 @@
 	"rust-analyzer.diagnostics.enable": true,
 	"rust-analyzer.diagnostics.experimental.enable": false,
 	"rust-analyzer.inlayHints.enable": true,
-	"rust-analyzer.inlayHints.parameterHints.enable": true,
+	"rust-analyzer.inlayHints.parameterHints.enable": false,
 	"rust-analyzer.inlayHints.typeHints.enable": true,
 	"rust-analyzer.inlayHints.chainingHints.enable": true,
 	"rust-analyzer.inlayHints.closingBraceHints.enable": true,
