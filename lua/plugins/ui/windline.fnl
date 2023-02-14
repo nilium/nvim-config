@@ -30,7 +30,7 @@
              :vi_mode
              {:name :vi_mode
               :hl_colors mode-colors
-              :text #(values [["  " (. state.mode 2)]])}
+              :text #(values [[" ● " (. state.mode 2)]])}
 
              :square_mode
              {:hl_colors mode-colors
