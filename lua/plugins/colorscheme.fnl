@@ -1,6 +1,8 @@
 (local {: plugin} (require :plugins.def))
 
 [(plugin :rebelot/kanagawa.nvim
+         ; Pin to commit because there are breaking changes and they don't improve anything for me.
+         :commit "fc2e308"
          :config
          (fn []
            (local colors

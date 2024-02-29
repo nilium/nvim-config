@@ -2,6 +2,7 @@
 
 [; Buffer line.
  (plugin :romgrk/barbar.nvim
+         :tag "v1.4.0"
          :config #(Plugin.config :bufferline
                                  {:icons false
                                   :tabpages false

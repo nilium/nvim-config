@@ -46,6 +46,7 @@
 
  ; Indent guides that work better.
  (plugin :lukas-reineke/indent-blankline.nvim
+         :tag "v2.20.8"
          :event :BufRead
          :setup (fn []
                   (local config

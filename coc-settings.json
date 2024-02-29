@@ -26,7 +26,7 @@
 	"zig.debugLog": false,
 	// Rust
 	"rust-analyzer.enable": true,
-	"rust-analyzer.lens.enable": true,
+	"rust-analyzer.lens.enable": false,
 	"rust-analyzer.diagnostics.enable": true,
 	"rust-analyzer.diagnostics.experimental.enable": false,
 	"rust-analyzer.inlayHints.enable": true,
@@ -35,4 +35,5 @@
 	"rust-analyzer.inlayHints.chainingHints.enable": true,
 	"rust-analyzer.inlayHints.closingBraceHints.enable": true,
 	"rust-analyzer.inlayHints.closingBraceHints.minLines": 1,
+	"rust-analyzer.checkOnSave.command": "clippy",
 }
